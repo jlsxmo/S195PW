@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portada</title> 
 
-  @vite(['resources/js/app.js'])
+  @vite(['resources/js/app.js'])>
 </head>
-<body>
-  <h1>Hola</h1>
+<body class="bg-dark">
+<h1 class="text-warning">Hola</h1>
   
 </body>
 </html>
