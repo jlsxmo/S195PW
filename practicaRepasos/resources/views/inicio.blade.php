@@ -21,7 +21,7 @@
     <h1 class="display-4 text-success">Programación Web</h1>
     <p class="lead">Alumno: <strong>Juan Luis Mosqueda Orta</strong></p>
     <p>Proyecto: <em>"practicaRepasos"</em></p>
-    <a href="#" class="btn btn-success btn-lg mt-4">REPASO 1</a>
+    <a href="{{ route('rutarepaso1') }}" class="btn btn-success btn-lg mt-4">REPASO 1</a>
   </div>
 
 </body>
