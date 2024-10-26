@@ -14,7 +14,7 @@
       @csrf
       <div class="mb-3">
         <label for="cantidad" class="form-label">Cantidad:</label>
-        <input type="number" step="any" class="form-control" id="cantidad" name="cantidad" required>
+        <input type="number" step="any" class="form-control" id="cantidad" name="cantidad" min="1" required>
       </div>
       <div class="mb-3">
         <label for="unidad" class="form-label">Conversión:</label>
