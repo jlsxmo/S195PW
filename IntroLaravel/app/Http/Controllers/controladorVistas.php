@@ -20,7 +20,13 @@ class ControladorVistas extends Controller
         return view('clientes');
     }
     public function procesarCliente(validadorCliente $peticion)
-    {
+    {   
+        //redirección con mensaje en sesión
+        $usuario = $peticion->input('txtNombre');
+        session()->flash('exito', 'El usuario ha sido registrado con éxito'.$usuario);
+
+        return to_route('rutaformulario');
+
         // redirección usan la ruta
         // return redirect('/');
 
@@ -34,14 +40,6 @@ class ControladorVistas extends Controller
         //$id = ['usuario'=>1, 'usuario'=>2];
 
         //return view('formulario', compact('id'));
-
-        
-
-        //redirección con mensaje en sesión
-        $usuario = $peticion->input('txtNombre');
-        session()->flash('exito', 'El usuario ha sido registrado con éxito'.$usuario);
-
-        return to_route('rutaformulario');
     }
 
 }
