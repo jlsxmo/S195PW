@@ -1,6 +1,6 @@
 @extends('layouts.plantilla1')
 
-@section('titulo', 'Inicio')
+@section('titulo', 'Biblioteca Poe')
 
 @section('contenido')
   <div class="text-center">

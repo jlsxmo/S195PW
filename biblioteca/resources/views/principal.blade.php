@@ -1,6 +1,6 @@
 @extends('layouts.plantilla1')
 
-@section('titulo', 'Inicio')
+@section('titulo', 'Noticia Literaria')
 
 @section('contenido')
 <div class="container my-5 p-4 bg-light rounded shadow-lg text-dark" style="font-family: 'Georgia', serif; max-width: 800px;">
