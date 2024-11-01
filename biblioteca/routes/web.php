@@ -1,15 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controladorVistas;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/formulario', function () {
-    return view('formulario');
-});
-
-Route::get('/principal', function () {
-    return view('principal');
-});
+Route::get('/', [controladorVistas::class, 'inicio']) -> name('rutaInicio');
+Route::get('/principal', [controladorVistas::class, 'principal']) -> name('rutaPrincipal');
+Route::get('/formulario', [controladorVistas::class, 'formulario']) -> name('rutaFormulario');
