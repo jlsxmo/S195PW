@@ -20,14 +20,13 @@ class controladorVistas extends Controller
     }
 
     public function registrarLibro(validadorLibro $peticion){
-        return redirect('/');
     // Si la validación es correcta, indicamos el libro que se está registrando
-       //$nombreLibro = $peticion->input('titulo');
+       $nombreLibro = $peticion->input('titulo');
 
     // Con session enviamos un mensaje diciendo que el libro se ha guardado correctamente
-       //session()->flash('mensaje', 'Todo correcto: Libro "'.$nombreLibro.'" guardado');
+       session()->flash('mensaje', 'Todo correcto: Libro "'.$nombreLibro.'" guardado');
 
     // Redirigimos al formulario
-       //return to_route('rutaFormulario');
+       return to_route('rutaFormulario');
     }
 }

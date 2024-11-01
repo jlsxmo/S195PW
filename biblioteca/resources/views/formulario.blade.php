@@ -3,6 +3,15 @@
 @section('titulo', 'Registrar Libro')
 
 @section('contenido')
+
+<!-- Mostrar mensaje con Alertify -->
+@if (session('mensaje'))
+    <script>
+        alertify.set('notifier', 'position', 'top-center');
+        alertify.success("{{ session('mensaje') }}");
+    </script>
+@endif
+
 <h1 class="text-center mb-3">Registrar Libro</h1>
 <div class="col-md-5 p-4 rounded bg-dark bg-gradient shadow-lg container d-flex justify-content-center">
 <form action="{{ route('procesar') }}" method="POST">

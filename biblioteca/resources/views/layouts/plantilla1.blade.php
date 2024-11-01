@@ -10,6 +10,10 @@
       background: linear-gradient(135deg, #0d3b66, #f4a261);
     }
   </style>
+
+  <!-- AlertifyJS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </head>
 <body class="background-gradient text-light d-flex flex-column min-vh-100">
 
