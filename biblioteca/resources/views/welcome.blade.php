@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  @vite(['resources/js/app.js'])
-</head>
-<body>
-  <h1>aas</h1>
-</body>
-</html>
+@extends('layouts.plantilla1')
+
+@section('titulo', 'Inicio')
+
+@section('contenido')
+  <div class="text-center">
+    <h1 class="display-4 mt-5">Bienvenido a la Biblioteca</h1>
+    <p class="lead">Explora, registra y descubre nuevos libros.</p>   
+  </div>
+@endsection
