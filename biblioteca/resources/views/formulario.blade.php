@@ -5,17 +5,18 @@
 @section('contenido')
 <h1 class="text-center mb-3">Registrar Libro</h1>
 <div class="col-md-5 p-4 rounded bg-dark bg-gradient shadow-lg container d-flex justify-content-center">
-<form action="/enviar" method="POST">
+<form action="{{ route('procesar') }}" method="POST">
+    @csrf() <!-- Token CSRF necesario para las solicitudes POST en Laravel -->
     <div class="mb-3 mt-3 row justify-content-center">
       <label for="isbn" class="col-sm-4 col-form-label">ISBN</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="isbn" name="isbn" required pattern="\d{13}" placeholder="9783161484100">
+        <input type="text" class="form-control" name="isbn" required pattern="\d{13}" placeholder="9783161484100">
       </div>
     </div>
     <div class="mb-3 row justify-content-center">
       <label for="titulo" class="col-sm-4 col-form-label">Título</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="La Metamorfosis" max=150>
+        <input type="text" class="form-control" name="titulo" required placeholder="La Metamorfosis" max=150>
       </div>
     </div>
     <div class="mb-3 row justify-content-center">
