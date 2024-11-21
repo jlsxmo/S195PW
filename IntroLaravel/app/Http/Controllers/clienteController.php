@@ -66,25 +66,52 @@ class clienteController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * Para abrir el formulario de edición
      */
     public function edit(string $id)
     {
-        //
+        //Obtenemos los datos del cliente específico
+        $cliente = DB::table('clientes')->where('id', $id)->first();
+
+        //Retornamos al formulario de edición con los datos del cliente
+        return view('formulario', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
+     * Actualiza los datos del cliente
      */
-    public function update(Request $request, string $id)
+    public function update(validadorCliente $request, string $id)
     {
-        //
+        //Actualizamos los datos del cliente
+        DB::table('clientes')->where('id', $id)->update([
+            'nombre'=> $request->input('txtnombre'),
+            'apellido'=> $request->input('txtapellido'),
+            'correo'=> $request->input('txtcorreo'),
+            'telefono'=> $request->input('txttelefono'),
+            'updated_at'=> Carbon::now(),
+        ]);
+
+        //Mensaje de confirmación de actualización
+        session()->flash('exito', 'El cliente ha sido actualizado con éxito');
+
+        //Redirección a la vista del formulario
+        return to_route('rutaformulario');
     }
 
     /**
      * Remove the specified resource from storage.
+     * Elimina un cliente en específico
      */
-    public function destroy(string $id)
+    public function destroy(string $id)    
     {
-        //
-    }
+        // Eliminar el cliente por ID
+        DB::table('clientes')->where('id', $id)->delete();
+
+        // Agregar mensaje de confirmación
+        session()->flash('exito', 'El cliente ha sido eliminado con éxito.');
+
+        // Mensaje de confirmación
+        return to_route('rutaclientes');
+    }    
 }
